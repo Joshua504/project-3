@@ -62,17 +62,17 @@
 // localStorage.clear();
 
 
-const checkBox = document.querySelector(".box")
-const radio = document.querySelector(".radio")
-const radio1 = document.querySelector(".radio1")
-const submit = document.querySelector(".submit")
-const display = document.querySelector(".display")
+// const checkBox = document.querySelector(".box")
+// const radio = document.querySelector(".radio")
+// const radio1 = document.querySelector(".radio1")
+// const submit = document.querySelector(".submit")
+// const display = document.querySelector(".display")
 
-submit.addEventListener("click", ()=>{
-} )
+// submit.addEventListener("click", ()=>{
+// } )
 
-let purchase = 300;
+// let purchase = 300;
 
-let check = purchase >= 100 ? "discount" : "no-discount" ;
-console.log('check: ', check);
+// let check = purchase >= 100 ? "discount" : "no-discount" ;
+// console.log('check: ', check);
 
