@@ -2,8 +2,18 @@ const inputArea = document.querySelector(".textarea");
 const todoContainer = document.querySelector(".todolist");
 const addButton = document.querySelector(".add");
 const statusText = document.querySelector(".status");
+const tabs = document.querySelectorAll(".links");
 
 let list = [];
+
+tabs.forEach((element) => {
+	element.addEventListener("click", () => {
+		tabs.forEach((el) => {
+			el.classList.remove("dark");
+		});
+		element.classList.add("dark");
+	});
+});
 
 addButton.addEventListener("click", () => {
 	let userName = inputArea.value;
@@ -32,12 +42,21 @@ addButton.addEventListener("click", () => {
 });
 
 function addText(txt) {
+	const checkBox = document.querySelectorAll(".check");
+
 	let text = `
     <div class="textholder">
 			<div class="check"></div>
 			<p class="display">${txt}</p>
 		</div>`;
 	todoContainer.innerHTML += text;
+
+	checkBox.forEach((check) => {
+		check.addEventListener("click", () => {
+			check.style.color = "#6e35af";
+			console.log("check: ", check);
+		});
+	});
 }
 
 function displayStatus(stat) {
@@ -59,8 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
-// localStorage.clear();p
-
+// localStorage.clear();
 
 // const checkBox = document.querySelector(".box")
 // const radio = document.querySelector(".radio")
@@ -75,4 +93,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // let check = purchase >= 100 ? "discount" : "no-discount" ;
 // console.log('check: ', check);
-

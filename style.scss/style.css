@@ -15,7 +15,6 @@
   place-content: center;
   height: 100vh;
   background: rgb(175, 145, 145);
-  display: none;
 }
 .wrapper .container {
   background: #FCFBF4;
@@ -42,7 +41,7 @@
   font-size: 1.2rem;
   color: #6e35af;
 }
-.wrapper .links:hover {
+.wrapper .dark {
   background: #d6d6d6;
 }
 .wrapper .modified {
