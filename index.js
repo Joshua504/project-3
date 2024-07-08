@@ -22,45 +22,24 @@ tabs.forEach((element) => {
 	});
 });
 
-tabs.forEach(tab => {
+tabs.forEach((tab) => {
 	tab.addEventListener("click", () => {
-		if(tab.classList.contains("modified")) {
+		if (tab.classList.contains("modified")) {
 			addContainer.classList.remove("hidden");
 			completeContainer.classList.add("hidden");
 		} else {
 			addContainer.classList.add("hidden");
 			completeContainer.classList.remove("hidden");
 		}
-	})
-})
-
-addButton.addEventListener("click", () => {
-	let userName = inputArea.value;
-
-	if (userName === "") {
-		displayStatus("empty input");
-		statusText.style.color = "red";
-		return;
-	}
-
-	const checkItem = JSON.parse(localStorage.getItem("list"));
-
-	if (checkItem && checkItem.length > 0) {
-		checkItem.push(userName);
-		list = checkItem;
-		console.log("list: ", list);
-		localStorage.setItem("list", JSON.stringify(list));
-	} else {
-		list.push(userName);
-		console.log("list: ", list);
-		localStorage.setItem("list", JSON.stringify(list));
-	}
-
-	addText(userName);
-	inputArea.value = "";
-	displayStatus("successfully added");
-	statusText.style.color = "#37e637";
+	});
 });
+
+inputArea.addEventListener("keydown", (event) => {
+	if (event.key === "Enter") {
+	}
+});
+
+addButton.addEventListener("click", () => {});
 
 function addText(txt) {
 	let text = `
@@ -88,6 +67,34 @@ function addText(txt) {
 		});
 	});
 }
+
+const checkAndDisplay = () => {
+	let userName = inputArea.value;
+
+	if (userName === "") {
+		displayStatus("empty input");
+		statusText.style.color = "red";
+		return;
+	}
+
+	const checkItem = JSON.parse(localStorage.getItem("list"));
+
+	if (checkItem && checkItem.length > 0) {
+		checkItem.push(userName);
+		list = checkItem;
+		console.log("list: ", list);
+		localStorage.setItem("list", JSON.stringify(list));
+	} else {
+		list.push(userName);
+		console.log("list: ", list);
+		localStorage.setItem("list", JSON.stringify(list));
+	}
+
+	addText(userName);
+	inputArea.value = "";
+	displayStatus("successfully added");
+	statusText.style.color = "#37e637";
+};
 
 function displayStatus(stat) {
 	statusText.textContent = stat;
