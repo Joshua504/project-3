@@ -41,12 +41,10 @@ addButton.addEventListener("click", () => {
 	statusText.style.color = "#37e637";
 });
 
-			// <div class="check"></div>
 function addText(txt) {
 	let text = `
     <div class="textholder">
-					<input class="check" type="checkbox" name="" id="">
-
+			<input class="check" type="checkbox" name="" id="">
 			<p class="display">${txt}</p>
 		</div>`;
 	todoContainer.innerHTML += text;
