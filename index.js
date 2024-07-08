@@ -68,29 +68,7 @@ function addText(txt) {
 
 	 const checkboxes = todoContainer.querySelectorAll(".checkbox");
 
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", moveToCompleted);
-  });
-
-  list.push(txt);
-}
-
-function moveToCompleted(event) {
-	const checkbox = event.target;
-	const textholder = checkbox.parentElement.parentElement;
-	const text = textholder.querySelector(".display").textContent;
-
-	// Remove the item from the list array
-	const storedList = JSON.parse(localStorage.getItem("list"));
-	const updatedList = storedList.pop((item) => item !== text);
-	localStorage.setItem("list", JSON.stringify(updatedList));
-
-	// Move the item to the completed section
-	const completedItem = textholder.cloneNode(true);
-	completeContainer.innerHTML = completedItem ;
-
-	// Remove the original item from the addContainer
-	textholder.remove();
+  
 }
 
 
