@@ -75,9 +75,8 @@ function addText(txt) {
 			const pText = textHolder.querySelector(".display").textContent;
 
 			const storedList = JSON.parse(localStorage.getItem("list"));
-			console.log("storedList: ", storedList);
 			const updatedList = storedList.filter((item) => item !== pText);
-			console.log('updatedList: ', updatedList);
+			
 		});
 	});
 }
