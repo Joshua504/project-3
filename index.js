@@ -51,21 +51,28 @@ function addText(txt) {
 		</div>`;
 	todoContainer.innerHTML += text;
 
-	const checkBox = document.querySelectorAll(".check");
+	// const checkBox = document.querySelectorAll(".check");
 
-	checkBox.forEach((check) => {
-		const display = document.querySelector(".display");
-		check.addEventListener("click", () => {
-			if (check.checked) {
-				if (display && display.classList.contains("display")) {
-					display.style.textDecoration = "line-through";
-					moveToCompleted()
-				}
-			} else {
-				display.style.textDecoration = "none";
-			}
-		});
-	});
+	// checkBox.forEach((check) => {
+	// 	const display = document.querySelector(".display");
+	// 	check.addEventListener("click", () => {
+	// 		if (check.checked) {
+	// 			if (display && display.classList.contains("display")) {
+	// 				display.style.textDecoration = "line-through";
+	// 			}
+	// 		} else {
+	// 			display.style.textDecoration = "none";
+	// 		}
+	// 	});
+	// });
+
+	 const checkboxes = todoContainer.querySelectorAll(".checkbox");
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", moveToCompleted);
+  });
+
+  list.push(txt);
 }
 
 function moveToCompleted(event) {
