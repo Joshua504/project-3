@@ -65,8 +65,11 @@ addButton.addEventListener("click", () => {
 function addText(txt) {
 	let text = `
     <div class="textholder">
-			<input class="check" type="checkbox" name="" id="">
-			<p class="display">${txt}</p>
+			<div>
+				<input class="check" type="checkbox" name="" id="">
+				<p class="display">${txt}</p>
+			</div>
+			<div><ion-icon name="close-circle-outline"></ion-icon></div>
 		</div>`;
 	todoContainer.innerHTML += text;
 
