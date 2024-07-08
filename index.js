@@ -72,10 +72,9 @@ function addText(txt) {
 		removeButton.addEventListener("click", () => {
 			const removedItem = removeItem(removeButton.dataset.index);
 			console.log("Removed Item:", removedItem);
-			// Add code here to remove the corresponding item from the UI
 		});
 
-
+		list.push(txt);
 
 
 	const checkBox = document.querySelectorAll(".check");
@@ -113,6 +112,13 @@ window.addEventListener("DOMContentLoaded", () => {
 	} else {
 		for (let i = 0; i < storedList.length; i++) {
 			addText(storedList[i]);
+			const removeButton = todoContainer.querySelector(
+				`.textholder[data-index="${i}"] .remove-btn`
+			);
+			removeButton.addEventListener("click", () => {
+				const removedItem = removeItem(i);
+				console.log("Removed Item:", removedItem);
+			});
 		}
 	}
 });
