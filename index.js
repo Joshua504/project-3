@@ -69,7 +69,7 @@ function addText(txt) {
 	 const checkboxes = todoContainer.querySelectorAll(".checkbox");
 
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", moveToCompleted);
+    checkbox.addEventListener("checked", moveToCompleted);
   });
 
   list.push(txt);
@@ -87,7 +87,7 @@ function moveToCompleted(event) {
 
 	// Move the item to the completed section
 	const completedItem = textholder.cloneNode(true);
-	completeContainer.appendChild(completedItem);
+	completeContainer.innerHTML = completedItem ;
 
 	// Remove the original item from the addContainer
 	textholder.remove();
