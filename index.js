@@ -5,6 +5,7 @@ const statusText = document.querySelector(".status");
 const tabs = document.querySelectorAll(".links");
 
 let list = [];
+console.log('list: ', list);
 
 tabs.forEach((element) => {
 	element.addEventListener("click", () => {
@@ -60,7 +61,6 @@ function addText(txt) {
 					display.style.textDecoration = "none";
 					console.log("Display Text: ", display.textContent);
 				}
-				// check.display.style.textDecoration = "line-through";
 			} else {
 					display.style.color = "#f18e31";
 				
