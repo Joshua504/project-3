@@ -74,7 +74,17 @@
   border-bottom: 1px solid #d6d6d6;
   display: flex;
   align-items: center;
-  gap: 1em;
+  justify-content: space-between;
+}
+.wrapper .di-1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.wrapper .di-2 {
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
 }
 .wrapper .check {
   height: 20px;
