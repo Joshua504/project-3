@@ -76,7 +76,7 @@ function addText(txt) {
 
 			const storedList = JSON.parse(localStorage.getItem("list"));
 			const updatedList = storedList.filter((item) => item !== pText);
-			
+			localStorage.setItem("list", JSON.stringify(updatedList));
 		});
 	});
 }
