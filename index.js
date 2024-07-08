@@ -3,9 +3,12 @@ const todoContainer = document.querySelector(".todolist");
 const addButton = document.querySelector(".add");
 const statusText = document.querySelector(".status");
 const tabs = document.querySelectorAll(".links");
+const addTab = document.querySelector(".modified");
+const completedTab = document.querySelector(".modified1");
+const addContainer = document.querySelector(".addCon");
+const completeContainer = document.querySelector(".complete");
 
 let list = [];
-
 
 tabs.forEach((element) => {
 	element.addEventListener("click", () => {
@@ -13,14 +16,21 @@ tabs.forEach((element) => {
 			el.classList.remove("dark");
 		});
 		element.classList.add("dark");
+		if (element.classList.contains("hidden")) {
+			todoContainer.classList.add("dark");
+		}
 	});
-
-	if (element.classList.contains("hidden")) {
-		todoContainer.classList.add("dark");
-	}
 });
 
+addTab.addEventListener("click", () => {
+	addContainer.classList.remove("hidden");
+	completeContainer.classList.add("hidden");
+});
 
+completedTab.addEventListener("click", () => {
+	addContainer.classList.add("hidden");
+	completeContainer.classList.remove("hidden");
+});
 
 addButton.addEventListener("click", () => {
 	let userName = inputArea.value;
@@ -36,11 +46,11 @@ addButton.addEventListener("click", () => {
 	if (checkItem && checkItem.length > 0) {
 		checkItem.push(userName);
 		list = checkItem;
-		console.log('list: ', list);
+		console.log("list: ", list);
 		localStorage.setItem("list", JSON.stringify(list));
 	} else {
 		list.push(userName);
-		console.log('list: ', list);
+		console.log("list: ", list);
 		localStorage.setItem("list", JSON.stringify(list));
 	}
 
@@ -58,11 +68,10 @@ function addText(txt) {
 		</div>`;
 	todoContainer.innerHTML += text;
 
-
 	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
-			const display = document.querySelector(".display");
+		const display = document.querySelector(".display");
 		check.addEventListener("click", () => {
 			if (check.checked) {
 				if (display && display.classList.contains("display")) {
@@ -71,13 +80,11 @@ function addText(txt) {
 					console.log("Display Text: ", display.textContent);
 				}
 			} else {
-					display.style.color = "#f18e31";
-				
+				display.style.color = "#f18e31";
 			}
 		});
 	});
 }
-
 
 function displayStatus(stat) {
 	statusText.textContent = stat;
@@ -102,4 +109,3 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // localStorage.clear();
-
