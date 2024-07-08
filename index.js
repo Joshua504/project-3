@@ -79,6 +79,7 @@ function addText(txt) {
 			localStorage.setItem("list", JSON.stringify(updatedList));
 
 			textHolder.remove();
+			displayStatus("successfully deleted");
 		});
 	});
 }
