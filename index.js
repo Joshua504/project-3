@@ -70,8 +70,9 @@ function addText(txt) {
 
 	deleteIcon.forEach((icon) => {
 		icon.addEventListener("click", (event) => {
-			const currentTxt = event.target.parentElement.children[1];
+			const currentTxt = event.target
 			console.log("currentTxt: ", currentTxt);
+			const currentTxtParent = currentTxt.parentElement.parentElement;
 		});
 	});
 }
