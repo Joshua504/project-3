@@ -5,7 +5,7 @@ const statusText = document.querySelector(".status");
 const tabs = document.querySelectorAll(".links");
 
 let list = [];
-console.log('list: ', list);
+// console.log('list: ', list);
 
 tabs.forEach((element) => {
 	element.addEventListener("click", () => {
@@ -30,9 +30,11 @@ addButton.addEventListener("click", () => {
 	if (checkItem && checkItem.length > 0) {
 		checkItem.push(userName);
 		list = checkItem;
+		console.log('list: ', list);
 		localStorage.setItem("list", JSON.stringify(list));
 	} else {
 		list.push(userName);
+		console.log('list: ', list);
 		localStorage.setItem("list", JSON.stringify(list));
 	}
 
