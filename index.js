@@ -22,15 +22,27 @@ tabs.forEach((element) => {
 	});
 });
 
-addTab.addEventListener("click", () => {
-	addContainer.classList.remove("hidden");
-	completeContainer.classList.add("hidden");
-});
+tabs.forEach(tab => {
+	tab.addEventListener("click", () => {
+		if(tab.classList.contains("modified")) {
+			addContainer.classList.remove("hidden");
+			completeContainer.classList.add("hidden");
+		} else {
+			addContainer.classList.add("hidden");
+			completeContainer.classList.remove("hidden");
+		}
+	})
+})
 
-completedTab.addEventListener("click", () => {
-	addContainer.classList.add("hidden");
-	completeContainer.classList.remove("hidden");
-});
+// addTab.addEventListener("click", () => {
+// 	addContainer.classList.remove("hidden");
+// 	completeContainer.classList.add("hidden");
+// });
+
+// completedTab.addEventListener("click", () => {
+// 	addContainer.classList.add("hidden");
+// 	completeContainer.classList.remove("hidden");
+// });
 
 addButton.addEventListener("click", () => {
 	let userName = inputArea.value;
