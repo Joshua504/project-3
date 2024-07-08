@@ -34,16 +34,6 @@ tabs.forEach(tab => {
 	})
 })
 
-// addTab.addEventListener("click", () => {
-// 	addContainer.classList.remove("hidden");
-// 	completeContainer.classList.add("hidden");
-// });
-
-// completedTab.addEventListener("click", () => {
-// 	addContainer.classList.add("hidden");
-// 	completeContainer.classList.remove("hidden");
-// });
-
 addButton.addEventListener("click", () => {
 	let userName = inputArea.value;
 
