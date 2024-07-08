@@ -81,8 +81,10 @@ function addText(txt) {
 			if (check.checked) {
 				if (display && display.classList.contains("display")) {
 					display.style.color = "red";
-					display.style.textDecoration = "none";
+					display.style.textDecoration = "line-through";
 					console.log("Display Text: ", display.textContent);
+				}else{
+					
 				}
 			}
 		});
