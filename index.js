@@ -55,7 +55,11 @@ function addText(txt) {
 			const display = document.querySelector(".display");
 		check.addEventListener("click", () => {
 			if (check.checked) {
-				check.display.style.textDecoration = "line-through";
+				if (display && display.classList.contains("display")) {
+					display.style.color = "red";
+					console.log("Display Text: ", display.textContent);
+				}
+				// check.display.style.textDecoration = "line-through";
 			} else {
 				check.display.style.textDecoration = "none";
 			}
