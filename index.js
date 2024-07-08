@@ -45,7 +45,7 @@ addButton.addEventListener("click", () => {
 function addText(txt) {
 	let text = `
     <div class="textholder">
-					<input class="checkbox" type="checkbox" name="" id="">
+					<input class="check" type="checkbox" name="" id="">
 
 			<p class="display">${txt}</p>
 		</div>`;
