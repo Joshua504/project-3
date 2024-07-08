@@ -67,6 +67,25 @@ function addText(txt) {
 	});
 }
 
+function moveToCompleted(event) {
+	const checkbox = event.target;
+	const textholder = checkbox.parentElement.parentElement;
+	const text = textholder.querySelector(".display").textContent;
+
+	// Remove the item from the list array
+	const storedList = JSON.parse(localStorage.getItem("list"));
+	const updatedList = storedList.filter((item) => item !== text);
+	localStorage.setItem("list", JSON.stringify(updatedList));
+
+	// Move the item to the completed section
+	const completedItem = textholder.cloneNode(true);
+	completeContainer.appendChild(completedItem);
+
+	// Remove the original item from the addContainer
+	textholder.remove();
+}
+
+
 const checkAndDisplay = () => {
 	let userName = inputArea.value;
 
