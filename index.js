@@ -82,7 +82,7 @@ function moveToCompleted(event) {
 
 	// Remove the item from the list array
 	const storedList = JSON.parse(localStorage.getItem("list"));
-	const updatedList = storedList.filter((item) => item !== text);
+	const updatedList = storedList.pop((item) => item !== text);
 	localStorage.setItem("list", JSON.stringify(updatedList));
 
 	// Move the item to the completed section
