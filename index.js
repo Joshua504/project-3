@@ -62,6 +62,7 @@ function addText(txt) {
 				}
 				// check.display.style.textDecoration = "line-through";
 			} else {
+					display.style.color = "#f18e31";
 				
 			}
 		});
