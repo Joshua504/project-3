@@ -44,6 +44,13 @@ addButton.addEventListener("click", () => {
 	statusText.style.color = "#37e637";
 });
 
+function removeItem(index) {
+	const storedList = JSON.parse(localStorage.getItem("list"));
+	const removedItem = storedList.splice(index, 1)[0];
+	localStorage.setItem("list", JSON.stringify(storedList));
+	return removedItem;
+}
+
 function addText(txt) {
 	let text = `
     <div class="textholder">
