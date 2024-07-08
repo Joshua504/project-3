@@ -66,11 +66,13 @@ function addText(txt) {
 	// 	});
 	// });
 
-	 const checkboxes = todoContainer.querySelectorAll(".checkbox");
-
-  
+	const deleteIcon = document
+		.querySelectorAll(".di-2")
+		.addEventListener("click", (event) => {
+			const parent = deleteIcon.parentElement;
+			parent.parentElement.remove();
+		});
 }
-
 
 const checkAndDisplay = () => {
 	let userName = inputArea.value;
