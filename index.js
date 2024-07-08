@@ -71,9 +71,11 @@ function addText(txt) {
 	deleteIcon.forEach((icon) => {
 		icon.addEventListener("click", (event) => {
 			const currentTxt = event.target
-			// console.log("currentTxt: ", currentTxt);
-			const currentTxtParent = currentTxt.parentElement;
-			console.log('currentTxtParent: ', currentTxtParent);
+			const textHolder = currentTxt.parentElement;
+			const pText = textHolder.querySelector(".display").textContent;
+			console.log('pText: ', pText);
+			console.log('currentTxtParent: ', textHolder);
+
 
 			  const storedList = JSON.parse(localStorage.getItem("list"));
 		});
