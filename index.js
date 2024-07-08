@@ -69,7 +69,7 @@ function addText(txt) {
 				<input class="check" type="checkbox" name="" id="">
 				<p class="display">${txt}</p>
 			</div>
-			<div ><ion-icon name="close-circle-outline"></ion-icon></div>
+			<ion-icon class="di-2" name="close-circle-outline"></ion-icon>
 		</div>`;
 	todoContainer.innerHTML += text;
 
