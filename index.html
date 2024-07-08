@@ -25,23 +25,25 @@
 					<ion-icon name="checkbox-outline"></ion-icon>
 				</li>
 			</ul>
-			<div class="container">
-				<div class="valueinput"><input class="textarea" type="text" required /></div>
-				<section class="todolist">
-				</section>
-				<p class="status"></p>
-			<div class="add"><ion-icon name="add-outline"></ion-icon></div>
-			</div>
-		</section>
 
-		
-		<!-- <main>
-			<input class="box" type="checkbox"> <p>checkbox</p><br>
-			<input class="radio" type="radio" name="card"> <p>radiobutton</p> <br>
-			<input class="radio1" type="radio" name="card"> <p>radio</p> <br>
-			<button type="submit" class="submit">submit</button>
-			<p>hello</p>
-			<p class="display"></p>
-		</main> -->
+			<section class="bodyCon">
+				<!-- --------------------------------- add --------------------------------- -->
+				<div class="addCon">
+					<div class="valueinput">
+						<input class="textarea" type="text" required />
+					</div>
+					<section class="todolist"></section>
+					<p class="status"></p>
+					<div class="add"><ion-icon name="add-outline"></ion-icon></div>
+				</div>
+				<!-- ------------------------------ completed ------------------------------ -->
+				<section class="complete">
+					<div class="textholder">
+						<input class="check" type="checkbox" name="" id="" />
+						<p class="display">${txt}</p>
+					</div>
+				</section>
+			</section>
+		</section>
 	</body>
 </html>

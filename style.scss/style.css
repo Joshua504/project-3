@@ -16,7 +16,7 @@
   height: 100vh;
   background: rgb(175, 145, 145);
 }
-.wrapper .container {
+.wrapper .bodyCon {
   background: #FCFBF4;
   max-width: 400px;
   width: 400px;

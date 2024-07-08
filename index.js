@@ -49,7 +49,6 @@ function addText(txt) {
     <div class="textholder">
 			<input class="check" type="checkbox" name="" id="">
 			<p class="display">${txt}</p>
-			<button class="remove-btn" data-index="${list.length}">Remove</button>
 		</div>`;
 	todoContainer.innerHTML += text;
 
