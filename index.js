@@ -115,11 +115,6 @@ window.addEventListener("DOMContentLoaded", () => {
 			const removeButton = todoContainer.querySelector(
 				`.textholder[data-index="${i}"] .remove-btn`
 			);
-			
-			removeButton.addEventListener("click", () => {
-				const removedItem = removeItem(i);
-				console.log("Removed Item:", removedItem);
-			});
 		}
 	}
 });
