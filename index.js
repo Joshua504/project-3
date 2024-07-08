@@ -44,19 +44,6 @@ addButton.addEventListener("click", () => {
 	statusText.style.color = "#37e637";
 });
 
-function removeItem(index) {
-	const storedList = JSON.parse(localStorage.getItem("list"));
-	const removedItem = storedList.splice(index, 1)[0];
-	localStorage.setItem("list", JSON.stringify(storedList));
-
-	 const textholders = document.querySelectorAll(".textholder");
-		if (textholders.length > index) {
-			textholders[index].remove();
-		}
-
-	return removedItem;
-}
-
 function addText(txt) {
 	let text = `
     <div class="textholder">
@@ -65,16 +52,6 @@ function addText(txt) {
 			<button class="remove-btn" data-index="${list.length}">Remove</button>
 		</div>`;
 	todoContainer.innerHTML += text;
-
-	  const removeButton = todoContainer.querySelector(
-			`[data-index="${list.length}"]`
-		);
-		removeButton.addEventListener("click", () => {
-			const removedItem = removeItem(removeButton.dataset.index);
-			console.log("Removed Item:", removedItem);
-		});
-
-		list.push(txt);
 
 
 	const checkBox = document.querySelectorAll(".check");
