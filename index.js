@@ -5,7 +5,7 @@ const statusText = document.querySelector(".status");
 const tabs = document.querySelectorAll(".links");
 
 let list = [];
-// console.log('list: ', list);
+
 
 tabs.forEach((element) => {
 	element.addEventListener("click", () => {
@@ -14,7 +14,13 @@ tabs.forEach((element) => {
 		});
 		element.classList.add("dark");
 	});
+
+	if (element.classList.contains("hidden")) {
+		todoContainer.classList.add("dark");
+	}
 });
+
+
 
 addButton.addEventListener("click", () => {
 	let userName = inputArea.value;

@@ -111,4 +111,7 @@
 }
 .wrapper .add:hover {
   background: #f3a764;
+}
+.wrapper .hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
