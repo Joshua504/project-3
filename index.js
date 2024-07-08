@@ -52,10 +52,10 @@ function addText(txt) {
 	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
- document.querySelector(".display");
+ 
 		check.addEventListener("click", () => {
 			if (check.checked) {
-				check.display.style.textDecoration = "line-through";
+				check.document.querySelector(".display").style.textDecoration = "line-through";
 			} else {
 				check.display.style.textDecoration = "none";
 			}
