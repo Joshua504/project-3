@@ -67,13 +67,12 @@ function addText(txt) {
 	// });
 
 	const deleteIcon = document.querySelectorAll(".di-2");
-	
-	deleteIcon.addEventListener("click", (event) => {
-		const currentTxt = event.target.parentElement.children[1];
-		console.log("currentTxt: ", currentTxt);
 
-		const parent = deleteIcon.parentElement;
-		parent.parentElement.remove();
+	deleteIcon.forEach((icon) => {
+		icon.addEventListener("click", (event) => {
+			const currentTxt = event.target.parentElement.children[1];
+			console.log("currentTxt: ", currentTxt);
+		});
 	});
 }
 
