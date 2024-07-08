@@ -69,7 +69,7 @@ function addText(txt) {
 				<input class="check" type="checkbox" name="" id="">
 				<p class="display">${txt}</p>
 			</div>
-			<div class="di-2"><ion-icon name="close-circle-outline"></ion-icon></div>
+			<div ><ion-icon name="close-circle-outline"></ion-icon></div>
 		</div>`;
 	todoContainer.innerHTML += text;
 
@@ -82,9 +82,9 @@ function addText(txt) {
 				if (display && display.classList.contains("display")) {
 					display.style.textDecoration = "line-through";
 					console.log("Display Text: ", display.textContent);
-				}else{
-					display.style.textDecoration = "none";
 				}
+			} else {
+				display.style.textDecoration = "none";
 			}
 		});
 	});
