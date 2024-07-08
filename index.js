@@ -41,15 +41,18 @@ addButton.addEventListener("click", () => {
 	statusText.style.color = "#37e637";
 });
 
+			// <div class="check"></div>
 function addText(txt) {
-	const checkBox = document.querySelectorAll(".check");
-
 	let text = `
     <div class="textholder">
-			<div class="check"></div>
+					<input class="checkbox" type="checkbox" name="" id="">
+
 			<p class="display">${txt}</p>
 		</div>`;
 	todoContainer.innerHTML += text;
+}
+
+	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
 		check.addEventListener("click", () => {
@@ -57,7 +60,6 @@ function addText(txt) {
 			console.log("check: ", check);
 		});
 	});
-}
 
 function displayStatus(stat) {
 	statusText.textContent = stat;
