@@ -72,7 +72,7 @@ function addText(txt) {
 		icon.addEventListener("click", (event) => {
 			const currentTxt = event.target
 			// console.log("currentTxt: ", currentTxt);
-			const currentTxtParent = currentTxt.parentElement.parentElement;
+			const currentTxtParent = currentTxt.parentElement;
 			console.log('currentTxtParent: ', currentTxtParent);
 
 			  const storedList = JSON.parse(localStorage.getItem("list"));
