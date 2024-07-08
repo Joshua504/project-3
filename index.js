@@ -57,11 +57,12 @@ function addText(txt) {
 			if (check.checked) {
 				if (display && display.classList.contains("display")) {
 					display.style.color = "red";
+					display.style.textDecoration = "none";
 					console.log("Display Text: ", display.textContent);
 				}
 				// check.display.style.textDecoration = "line-through";
 			} else {
-				check.display.style.textDecoration = "none";
+				
 			}
 		});
 	});
