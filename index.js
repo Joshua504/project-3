@@ -76,7 +76,7 @@ function addText(txt) {
 
 			const storedList = JSON.parse(localStorage.getItem("list"));
 			console.log("storedList: ", storedList);
-			const updatedList = storedList.filter((item, index) => index !== pText);
+			const updatedList = storedList.filter((item) => item !== pText);
 			console.log('updatedList: ', updatedList);
 		});
 	});
