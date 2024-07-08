@@ -59,6 +59,7 @@ function addText(txt) {
 			if (check.checked) {
 				if (display && display.classList.contains("display")) {
 					display.style.textDecoration = "line-through";
+					moveToCompleted()
 				}
 			} else {
 				display.style.textDecoration = "none";
