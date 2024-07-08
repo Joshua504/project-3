@@ -32,9 +32,13 @@
 					<div class="valueinput">
 						<input class="textarea" type="text" required />
 					</div>
-					<section class="todolist"></section>
+					<section class="todolist">
+						<div class="textholder">
+							<input class="check" type="checkbox" name="" id="" />
+							<p class="display">${txt}</p>
+						</div>
+					</section>
 					<p class="status"></p>
-					<div class="add"><ion-icon name="add-outline"></ion-icon></div>
 				</div>
 				<!-- ------------------------------ completed ------------------------------ -->
 				<section class="complete">
@@ -43,6 +47,7 @@
 						<p class="display">${txt}</p>
 					</div>
 				</section>
+				<div class="add"><ion-icon name="add-outline"></ion-icon></div>
 			</section>
 		</section>
 	</body>

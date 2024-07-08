@@ -24,6 +24,9 @@
   border-bottom-right-radius: 20px;
   position: relative;
   padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .wrapper .navlinks {
   display: flex;
