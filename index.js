@@ -52,10 +52,10 @@ function addText(txt) {
 	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
- 
+			const display = document.querySelector(".display");
 		check.addEventListener("click", () => {
 			if (check.checked) {
-				check.document.querySelector(".display").style.textDecoration = "line-through";
+				check.display.style.textDecoration = "line-through";
 			} else {
 				check.display.style.textDecoration = "none";
 			}
@@ -85,16 +85,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // localStorage.clear();
 
-// const checkBox = document.querySelector(".box")
-// const radio = document.querySelector(".radio")
-// const radio1 = document.querySelector(".radio1")
-// const submit = document.querySelector(".submit")
-// const display = document.querySelector(".display")
-
-// submit.addEventListener("click", ()=>{
-// } )
-
-// let purchase = 300;
-
-// let check = purchase >= 100 ? "discount" : "no-discount" ;
-// console.log('check: ', check);
