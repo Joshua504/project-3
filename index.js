@@ -36,10 +36,9 @@ tabs.forEach((tab) => {
 
 inputArea.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
+		checkAndDisplay();
 	}
 });
-
-addButton.addEventListener("click", () => {});
 
 function addText(txt) {
 	let text = `
@@ -117,5 +116,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 });
+
+addButton.addEventListener("click", checkAndDisplay);
 
 // localStorage.clear();
