@@ -50,11 +50,9 @@ function addText(txt) {
 	todoContainer.innerHTML += text;
 
 	const checkBox = document.querySelectorAll(".check");
-			// console.log('display: ', display);
-	// console.log('checkBox: ', checkBox);
 
 	checkBox.forEach((check) => {
-			const display = document.querySelector(".display");
+ document.querySelector(".display");
 		check.addEventListener("click", () => {
 			if (check.checked) {
 				check.display.style.textDecoration = "line-through";
