@@ -48,14 +48,18 @@ function addText(txt) {
 			<p class="display">${txt}</p>
 		</div>`;
 	todoContainer.innerHTML += text;
-	
+
 	const checkBox = document.querySelectorAll(".check");
 	console.log('checkBox: ', checkBox);
 
 	checkBox.forEach((check) => {
 		check.addEventListener("click", () => {
-			check.style.color = "#6e35af";
-			console.log("check: ", check);
+			const display = document.querySelector(".display");
+			if (check.checked) {
+				check.display.style.textDecoration = "line-through";
+			} else {
+				check.display.style.textDecoration = "none";
+			}
 		});
 	});
 }
