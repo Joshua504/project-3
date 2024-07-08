@@ -48,8 +48,7 @@ function addText(txt) {
 			<p class="display">${txt}</p>
 		</div>`;
 	todoContainer.innerHTML += text;
-}
-
+	
 	const checkBox = document.querySelectorAll(".check");
 	console.log('checkBox: ', checkBox);
 
@@ -59,6 +58,8 @@ function addText(txt) {
 			console.log("check: ", check);
 		});
 	});
+}
+
 
 function displayStatus(stat) {
 	statusText.textContent = stat;
