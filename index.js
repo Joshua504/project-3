@@ -53,7 +53,14 @@ function addText(txt) {
 		</div>`;
 	todoContainer.innerHTML += text;
 
-	
+	  const removeButton = todoContainer.querySelector(
+			`[data-index="${list.length}"]`
+		);
+		removeButton.addEventListener("click", () => {
+			const removedItem = removeItem(removeButton.dataset.index);
+			console.log("Removed Item:", removedItem);
+			// Add code here to remove the corresponding item from the UI
+		});
 
 
 
