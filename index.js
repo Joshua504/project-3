@@ -53,6 +53,7 @@ function addText(txt) {
 }
 
 	const checkBox = document.querySelectorAll(".check");
+	console.log('checkBox: ', checkBox);
 
 	checkBox.forEach((check) => {
 		check.addEventListener("click", () => {
