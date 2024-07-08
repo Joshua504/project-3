@@ -84,8 +84,6 @@ function addText(txt) {
 					display.style.textDecoration = "none";
 					console.log("Display Text: ", display.textContent);
 				}
-			} else {
-				display.style.color = "#f18e31";
 			}
 		});
 	});
