@@ -69,7 +69,7 @@ function addText(txt) {
 	 const checkboxes = todoContainer.querySelectorAll(".checkbox");
 
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("checked", moveToCompleted);
+    checkbox.addEventListener("change", moveToCompleted);
   });
 
   list.push(txt);
