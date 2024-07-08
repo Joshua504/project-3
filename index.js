@@ -51,20 +51,20 @@ function addText(txt) {
 		</div>`;
 	todoContainer.innerHTML += text;
 
-	// const checkBox = document.querySelectorAll(".check");
+	const checkBox = document.querySelectorAll(".check");
 
-	// checkBox.forEach((check) => {
-	// 	const display = document.querySelector(".display");
-	// 	check.addEventListener("click", () => {
-	// 		if (check.checked) {
-	// 			if (display && display.classList.contains("display")) {
-	// 				display.style.textDecoration = "line-through";
-	// 			}
-	// 		} else {
-	// 			display.style.textDecoration = "none";
-	// 		}
-	// 	});
-	// });
+	checkBox.forEach((check) => {
+		const display = document.querySelector(".display");
+		check.addEventListener("click", () => {
+			if (check.checked) {
+				if (display && display.classList.contains("display")) {
+					display.style.textDecoration = "line-through";
+				}
+			} else {
+				display.style.textDecoration = "none";
+			}
+		});
+	});
 
 	const deleteIcon = document.querySelectorAll(".di-2");
 
@@ -80,6 +80,7 @@ function addText(txt) {
 
 			textHolder.remove();
 			displayStatus("successfully deleted");
+			statusText.style.color = "red";
 		});
 	});
 }
