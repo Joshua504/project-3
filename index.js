@@ -40,6 +40,8 @@ inputArea.addEventListener("keydown", (event) => {
 	}
 });
 
+let completeArray = [];
+
 function addText(txt) {
 	let text = `
     <div class="textholder">
@@ -54,14 +56,22 @@ function addText(txt) {
 	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
-		const display = document.querySelector(".display");
-		check.addEventListener("click", () => {
+		check.addEventListener("change", (e) => {
+			const currentTxt = e.target;
+			const textHolder = currentTxt.parentElement.parentElement;
+			const pText = textHolder.querySelector(".display").textContent;
+
 			if (check.checked) {
-				if (display && display.classList.contains("display")) {
-					display.style.textDecoration = "line-through";
-				}
-			} else {
-				display.style.textDecoration = "none";
+				const storedList = JSON.parse(localStorage.getItem("list")) || [];
+				const updatedList = storedList.filter((item) => item !== text);
+				const completedArray = storedList.filter((item) => item === text);
+				localStorage.setItem("list", JSON.stringify(updatedList));
+				localStorage.setItem("completedList", JSON.stringify(completedArray));
+
+				const completedItem = textHolder.cloneNode(true);
+				completeContainer.appendChild(completedItem);
+
+				textHolder.remove();
 			}
 		});
 	});
@@ -99,11 +109,9 @@ const checkAndDisplay = () => {
 	if (checkItem && checkItem.length > 0) {
 		checkItem.push(userName);
 		list = checkItem;
-		console.log("list: ", list);
 		localStorage.setItem("list", JSON.stringify(list));
 	} else {
 		list.push(userName);
-		console.log("list: ", list);
 		localStorage.setItem("list", JSON.stringify(list));
 	}
 
@@ -128,13 +136,9 @@ window.addEventListener("DOMContentLoaded", () => {
 	} else {
 		for (let i = 0; i < storedList.length; i++) {
 			addText(storedList[i]);
-			const removeButton = todoContainer.querySelector(
-				`.textholder[data-index="${i}"] .remove-btn`
-			);
 		}
 	}
 });
 
 addButton.addEventListener("click", checkAndDisplay);
-
 // localStorage.clear();
