@@ -9,7 +9,7 @@ const addContainer = document.querySelector(".addCon");
 const completeContainer = document.querySelector(".complete");
 
 let list = [];
-
+/* ----------------------------- switching tabs ----------------------------- */
 tabs.forEach((element) => {
 	element.addEventListener("click", () => {
 		tabs.forEach((el) => {
@@ -33,13 +33,13 @@ tabs.forEach((tab) => {
 		}
 	});
 });
-
+/* ------------------------------ enter-botton ------------------------------ */
 inputArea.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
 		checkAndDisplay();
 	}
 });
-
+/* ------------------------- creating the todo-items ------------------------ */
 let completeArray = [];
 
 function addText(txt) {
@@ -52,7 +52,7 @@ function addText(txt) {
 			<ion-icon class="di-2" name="close-circle-outline"></ion-icon>
 		</div>`;
 	todoContainer.innerHTML += text;
-
+/* --------------- moving completed items to the completed tab -------------- */
 	const checkBox = document.querySelectorAll(".check");
 
 	checkBox.forEach((check) => {
@@ -75,7 +75,7 @@ function addText(txt) {
 			}
 		});
 	});
-
+/* ------------------------------- delete-todo ------------------------------ */
 	const deleteIcon = document.querySelectorAll(".di-2");
 
 	deleteIcon.forEach((icon) => {
@@ -94,7 +94,7 @@ function addText(txt) {
 		});
 	});
 }
-
+/* --------------------------- displaying the todo -------------------------- */
 const checkAndDisplay = () => {
 	let userName = inputArea.value;
 
@@ -120,14 +120,14 @@ const checkAndDisplay = () => {
 	displayStatus("successfully added");
 	statusText.style.color = "#37e637";
 };
-
+/* ----------------------------- status display ----------------------------- */
 function displayStatus(stat) {
 	statusText.textContent = stat;
 	setTimeout(() => {
 		statusText.textContent = "";
 	}, 3000);
 }
-
+/* --------------- retrieving from localstorage when reloading -------------- */
 window.addEventListener("DOMContentLoaded", () => {
 	let storedList = JSON.parse(localStorage.getItem("list")) || [];
 
